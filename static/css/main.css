@@ -1,0 +1,35 @@
+body {
+    background-color: aliceblue;
+}
+
+
+.grade{
+    display: inline;
+    margin-right: 1rem;
+}
+
+.checkbox{
+    display: block;
+    margin-left: 0.25rem;
+    transform: scale(1.5);
+}
+#submitButton{
+    display: block;
+    color: crimson;
+}
+
+#submitButton,
+#deleteButton {
+    font-size: 0.8rem;
+    color: black;
+    border-radius: 4px;
+    width: 5rem;
+}
+
+#submitButton {
+    background-color: rgba(0, 123, 255, 0.75);
+}
+
+#deleteButton {
+    background-color: rgba(255, 0, 0, 0.75);
+}

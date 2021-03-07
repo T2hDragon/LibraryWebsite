@@ -1,0 +1,75 @@
+body {
+    background: url("../images/background3.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+html,
+body {
+    color: black;
+}
+
+img.presentation {
+    margin: 1rem auto;
+    height: 12.5rem;
+}
+
+
+nav {
+    margin: 20px;
+    font-size: 2rem;
+}
+
+img {
+    width: 100%;
+}
+
+a:link,
+a:visited,
+a:active {
+    color: #f5f5dc;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #add8e6;
+}
+
+.reset-data {
+    height: 0.2rem;
+    width: 0.6rem;
+    margin: 1rem;
+}
+
+#message-block, #error-block {
+    position: center;
+    border-radius: .25rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem auto;
+    width: 35%;
+    border: 3px solid;
+}
+
+#error-block {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: red;
+}
+
+#message-block {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: green;
+}
+
+.head-title{
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px #000;
+}
+
+
+

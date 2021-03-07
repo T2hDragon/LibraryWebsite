@@ -1,0 +1,37 @@
+.divTable {
+    display: table;
+    width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgba(31, 4, 185, 0.1);
+}
+
+.divTableRow {
+    display: table-row;
+}
+
+.divTableCell {
+    border: 1px solid rgba(255, 2, 2, 0.15);
+    display: table-cell;
+    padding: 3px 10px;
+    color: #f5f5dc;
+    text-shadow: 2px 2px #000;
+}
+
+.divTableHead {
+    border: 1.5px solid rgba(255, 2, 2, 0.3);
+    font-size: 3.5rem;
+}
+
+.divTableBody {
+    display: table-row-group;
+}
+
+.score-filled {
+    color: darkorange;
+}
+
+.score-empty {
+    color: #f5f5dc;
+}

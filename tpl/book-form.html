@@ -1,0 +1,88 @@
+<form action="?cmd=book-form-submit" method="POST">
+    <div class="divTable formTable">
+        <div class="divTableBody">
+            <div class="divTableRow">
+                <div class="divTableCell heading"><label for="title">Pealkiri</label></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <input
+                        class="textArea"
+                        id="title"
+                        name="title"
+                        value="{{ $book->title }}"
+                        type="text" />
+                </div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell heading"><label for="author1">Autor 1</label></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <select type="text" name="author1" id="author1" class="textArea">
+                        <option value=></option>
+                        <tpl tpl-foreach="$authors as $author">
+                            <option tpl-selected="$author->id === $author1Id" value="{{$author->id}}">{{ $author->firstName }} {{$author->lastName}}</option>
+                        </tpl>
+                    </select>
+                </div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell heading"><label for="author2">Autor 2</label></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <select type="text" name="author2" id="author2" class="textArea">
+                        <option value=></option>
+                        <tpl tpl-foreach="$authors as $author">
+                            <option tpl-selected="$author->id === $author2Id" value="{{$author->id}}">{{ $author->firstName }} {{$author->lastName}}</option>
+                        </tpl>
+                    </select>
+                </div>
+            </div>
+
+            <div class="divTableRow">
+                <div class="divTableCell heading">Hinne</div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <tpl tpl-foreach="range(1,5) as $grade">
+                        <label for="grade{{$grade}}">{{$grade}}</label>
+                        <input type="radio"
+                               id="grade{{$grade}}"
+                               name="grade"
+                               tpl-checked="$grade === $book->grade"
+                               value="{{$grade}}">
+                        <span>&nbsp&nbsp&nbsp</span>
+                    </tpl>
+                </div>
+            </div>
+            <div class=" divTableRow">
+                <div class="divTableCell heading"><label for="isRead">Loetud</label></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <label class="grade-checkbox">
+                        <input id = "isRead"
+                               name="isRead"
+                               tpl-checked="$book->isRead"
+                               type="checkbox" />
+                    </label>
+                </div>
+            </div>
+            <div class=" divTableRow">
+                <div class="divTableCell submit">
+                    <input type="hidden" name="book-id" value="{{$book->id}}">
+                    <input tpl-if="$isEditForm" type="hidden" name="is-edit-form" value="true">
+                    <input class="submit" id="submitButton" name="submitButton" type="submit" value="Salvesta"/>
+                </div>
+            </div>
+            <div class=" divTableRow" tpl-if="$isEditForm">
+                <div class="divTableCell delete">
+                    <input class="delete" id="deleteButton" name="deleteButton" type="submit" value="Kustuta"/>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

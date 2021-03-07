@@ -1,0 +1,27 @@
+main {
+    flex:1;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+footer {
+    background-color: rgb(65, 65, 65);
+    margin: 8rem 0 0;
+    width: 100%;
+    bottom: 0;
+    display: block;
+    font-size: 0.75rem;
+    padding: 1.5rem 0 1rem 1rem;
+}
+
+.footer-text {
+    color: white;
+    display: block;
+    margin-top: 0.75rem;
+    text-decoration-line: none;
+}

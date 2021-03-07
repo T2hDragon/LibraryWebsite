@@ -1,0 +1,32 @@
+<div class="divTable">
+    <div class="divTableBody">
+        <div class="divTableRow">
+            <div class="divTableCell divTableHead">Pealkiri</div>
+            <div class="divTableCell divTableHead">Autorid</div>
+            <div class="divTableCell divTableHead">Hinne</div>
+        </div>
+
+        <tpl tpl-foreach="$books as $book">
+            <div class='divTableRow'>
+                <div class='divTableCell'><a
+                        href="?cmd=book-form&book-id={{$book->id}}">{{$book->title}}</a>
+                </div>
+                <div class='divTableCell'>
+                    <tpl tpl-foreach="$book->authors as $author">
+                        {{ $author->firstName }}
+                        {{ $author->lastName }}<tpl tpl-if="!$last">,</tpl>
+                    </tpl>
+
+                </div>
+                <div class='divTableCell'>
+                    <div class="score-empty">
+                        <tpl tpl-foreach="range(1, 5) as $grade" tpl-trim-contents>
+                            <span tpl-class="score-filled if  $book->grade >= $grade">&#9733;</span>
+
+                        </tpl>
+                    </div>
+                </div>
+            </div>
+        </tpl>
+    </div>
+</div>

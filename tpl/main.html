@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ee">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/footer.css"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/table.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/formTable.css"/>
+
+
+    <title>Raamatukogu</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <a id="book-list-link" class="navbar-brand" href="?cmd=book-list">Raamatute riiul</a>
+            <li><a id="author-list-link" href="?cmd=author-list">Autorid</a></li>
+            <li><a id="book-form-link" href="?cmd=book-form">Lisa raamat</a></li>
+            <li><a id="author-form-link" href="?cmd=author-form">Lisa autor</a></li>
+        </ul>
+    </div>
+</nav>
+
+<img class="presentation" src="./images/bookshelf1.jpg" alt="a nice bookshelf"/>
+
+<form action="reset.php">
+    <label for="reset"></label>
+    <input id="reset" class="reset-data" name="reset" type="submit" value="RESET DATA"/>
+</form>
+
+    <main id="content-wrap">
+        <h1 class="head-title">{{$title}}</h1>
+       <script type="module" src=""></script>
+    </main>
+<footer>
+    <a class="footer-text" href="#">Kontakt</a>
+    <a class="footer-text" href="#">Meist</a>
+    <a class="footer-text" href="#">Tagasiside</a>
+    <a class="footer-text" href="#">Foorum</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<div id="error-block" tpl-if="$errors">
+    <tpl tpl-foreach="$errors as $error">
+        <strong> {{ $error}} </strong><br>
+    </tpl>
+</div>
+<form id="input-form">
+
+    <div class="label-cell"><label for="title">Pealkiri:</label></div>
+    <div class="input-cell"><input
+            id="title"
+            name="title"
+            value="{{ $book->title }}"
+            type="text" /></div>
+
+    <div class="label-cell">Hinne: </div>
+    <div class="input-cell">
+        <tpl tpl-foreach="range(1,5) as $grade">
+            <label for="grade{{$grade}}">{{$grade}}</label>
+            <input type="radio"
+                   id="grade{{$grade}}"
+                   name="grade"
+                   tpl-checked="$grade === $book->grade"
+                   value="{{$grade}}">
+        </tpl>
+    </div>
+
+    <div class="flex-break"></div>
+
+    <div class="label-cell"><label for="read">Loetud:</label></div>
+    <div class="input-cell">
+        <input name="isRead"
+               id="read"
+               tpl-checked="$book->isRead"
+               type="checkbox" />
+    </div>
+
+    <div class="flex-break"></div>
+
+    <div class="label-cell"></div>
+    <div class="input-cell button-cell">
+        <input name="deleteButton"
+               tpl-if="$isEditForm"
+               class="danger"
+               type="submit"
+               value="Kustuta">
+
+        <input name="submitButton" type="submit" value="Salvesta">
+    </div>
+</form>

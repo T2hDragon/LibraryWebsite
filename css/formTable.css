@@ -1,0 +1,51 @@
+.formTable {
+    width: 16%;
+    border-radius: 50px;
+    padding: 1.5em;
+}
+
+.formTable .divTableCell {
+    text-align: center;
+    border: 0px solid #999999;
+}
+
+input.submit,
+input.delete {
+    font-size: 1.5rem;
+    color: black;
+    border-radius: 4px;
+    margin-left: 4em;
+    width: 8rem;
+}
+
+input.submit {
+    background-color: rgba(0, 123, 255, 0.75);
+}
+
+input.delete {
+    background-color: rgba(255, 0, 0, 0.75);
+}
+
+.formTable .divTableCell.submit,
+.formTable .divTableCell.delete {
+    text-align: right;
+}
+
+
+.formTable .divTableCell.heading {
+    padding-top: 2em;
+}
+
+.textArea {
+    width: 25rem;
+    height: 2.5rem;
+    color: black;
+}
+
+.grade-radio-box {
+    margin-right: 1.5rem;
+}
+
+.no-display {
+    display: none;
+}

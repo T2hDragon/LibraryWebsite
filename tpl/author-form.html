@@ -1,0 +1,61 @@
+<form action="?cmd=author-form-submit" method="POST">
+    <div class="divTable formTable">
+        <div class="divTableBody">
+            <div class="divTableRow">
+                <div class="divTableCell heading"><label for="firstName">Eesnimi</label></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <input
+                        class="textArea"
+                        id="firstName"
+                        name="firstName"
+                        value="{{ $author->firstName }}"
+                        type="text" />
+                </div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell heading"><label for="lastName">Perenimi</label></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <input
+                            class="textArea"
+                            id="lastName"
+                            name="lastName"
+                            value="{{ $author->lastName }}"
+                            type="text" />
+                </div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell heading">Hinne</div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <tpl tpl-foreach="range(1,5) as $grade">
+                        <label for="grade{{$grade}}">{{$grade}}</label>
+                        <input type="radio"
+                               id="grade{{$grade}}"
+                               name="grade"
+                               tpl-checked="$grade === $author->grade"
+                               value="{{$grade}}">
+                        <span>&nbsp&nbsp&nbsp</span>
+                    </tpl>
+                </div>
+            </div>
+            <div class=" divTableRow">
+                <div class="divTableCell submit">
+                    <input type="hidden" name="author-id" value="{{$author->id}}">
+                    <input tpl-if="$isEditForm" type="hidden" name="is-edit-form" value="true">
+                    <input class="submit" id="submitButton" name="submitButton" type="submit" value="Salvesta"/>
+                </div>
+            </div>
+            <div class=" divTableRow" tpl-if="$isEditForm">
+                <div class="divTableCell delete">
+                    <input class="delete" id="deleteButton" name="deleteButton" type="submit" value="Kustuta"/>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
